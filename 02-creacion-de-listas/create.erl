@@ -10,19 +10,16 @@
 -export([create/1, reverse_create/1]).
 
 create(N) ->
-	create_acc(1, (N+1), []).
+	create_acc(1, (N+1)).
 
-create_acc(N, Lim, Acc) ->
+create_acc(N, Lim) ->
 	case N of
-		Lim -> Acc;
-		_ -> create_acc(N+1, Lim, Acc++[N])
+		Lim -> [];
+		_ -> [N|create_acc(N+1, Lim)]
 	end.
 
 reverse_create(N) ->
-	reverse_create_acc(N, []).
-
-reverse_create_acc(N, Acc) ->
 	case N of
-		0 -> Acc;
-		_ -> reverse_create_acc(N-1, Acc++[N])
+		0 -> [];
+		_ -> [N|reverse_create(N-1)]
 	end.
