@@ -1,7 +1,7 @@
 %%%-------------------------------------------------------------------
 %%% @author Elías García <elias.garcia@udc.es>
 %%% @copyright (C) 2015, Elías García
-%%% @doc Assignment #1: Simple pattern matching
+%%% @doc Assignment #2: Creating lists
 %%% Created : 4 Feb 2016
 %%%-------------------------------------------------------------------
 
