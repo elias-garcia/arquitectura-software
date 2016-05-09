@@ -9,6 +9,8 @@
 
 -export([create/1, reverse_create/1]).
 
+%% @doc Given an integer, it returns a list of all the integers from 0 to that integer.
+%% @spec create(Value :: integer()) -> [integer()]
 create(N) ->
 	create_acc(1, (N+1)).
 
@@ -18,6 +20,8 @@ create_acc(N, Lim) ->
 		_ -> [N|create_acc(N+1, Lim)]
 	end.
 
+%% @doc Given an integer, it returns a list of all the integers from that integer to 0.
+%% @spec reverse_create(Value :: integer()) -> [integer()]
 reverse_create(N) ->
 	case N of
 		0 -> [];

@@ -9,6 +9,8 @@
 
 - export([print/1, even_print/1]).
 
+%% @doc Given an integer, it prints on screen all numbers between 1 and N.
+%% @spec print(Value :: integer()) -> Screen output
 print(N) ->
 	print_acc(N, 1).
 
@@ -18,6 +20,8 @@ print_acc(N, Acc) ->
 	io:format("~p - ", [Acc]),
 	print_acc(N, Acc+1).
 
+%% @doc Given an integer, it prints on screen all even numbers between 1 and N.
+%% @spec print(Value :: integer()) -> Screen output
 even_print(N) ->
 	even_print_acc(N, 1).
 

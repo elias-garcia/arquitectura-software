@@ -1,10 +1,18 @@
+%%%-------------------------------------------------------------------
+%%% @author Elías García <elias.garcia@udc.es>
+%%% @copyright (C) 2015, Elías García
+%%% @doc Assignment #9: Cross Ring of Processes
+%%% Created : 9 May 2016
+%%%-------------------------------------------------------------------
+
 -module(crossring).
 
-%% PUBLIC API
 -export([start/3]).
 
 -define(CROSSRING, crossring).
 
+%% @doc Starts the ring
+%% @spec start(nat(), nat(), any()) -> ok
 start(ProcNum, MsgNum, Message) when (ProcNum > 0), (MsgNum > 0) ->
     true = register(?CROSSRING, spawn(fun() -> init_master(ProcNum-1, MsgNum, Message) end)),
     ok.
